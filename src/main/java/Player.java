@@ -1,9 +1,14 @@
 public class Player {
 
-    private void takeTurn()
+    private String name;
+
+    Player(String name)
+    {
+        this.name = name;
+    }
+
+    public void takeTurn()
     {
 
     }
-
-
 }
