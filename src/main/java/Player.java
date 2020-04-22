@@ -1,10 +1,11 @@
 public class Player {
 
-    private final int NB_ROLL = 2, BEGIN_CASH = 1500;
+    private final int BEGIN_CASH = 1500;
     private String name;
     MonopolyGame game;
     Piece piece;
     private int cash;
+    Cup cup;
 
     Player(String name, MonopolyGame game)
     {
@@ -12,18 +13,15 @@ public class Player {
         this.game = game;
         piece = new Piece("piece " + "name", game);
         cash = BEGIN_CASH;
+        cup = new Cup();
     }
 
     public void takeTurn()
     {
-        int fvTot = 0;
-        int temp;
-        for (int i = 0; i < NB_ROLL; i++) {
-            game.dies[i].roll();
-            temp = game.dies[i].getFaceValue();
-            System.out.println(name + " lance le dés et obtient " + temp);
-            fvTot += temp;
-        }
+        int fvTot;
+        cup.roll();
+        fvTot = cup.getTotal();
+        System.out.println(name + " lance les dés et obtient " + fvTot);
 
         Square oldLoc = piece.getLocation();
         Square newLoc = game.board.getSquare(oldLoc, fvTot);

@@ -6,13 +6,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BoardTest {
-    Board board;
-
-    @BeforeEach
-    void init()
-    {
-        board = new Board();
-    }
+    Board board = new Board();
 
     @Test
     void squaresHasName()
