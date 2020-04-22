@@ -15,7 +15,7 @@ class BoardTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {10, 12, 14, 24})
+    @ValueSource(ints = {17, 18, 19, 24})
     void getSquareTest(int value)
     {
         assertEquals(board.getSquares()[value] ,board.getSquare(board.getSquares()[value-2],2));
