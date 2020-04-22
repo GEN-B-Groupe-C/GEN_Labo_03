@@ -9,10 +9,12 @@ public class MonopolyGame {
     Die[] dies = {new Die(), new Die()};
     Board board;
 
+    MonopolyGame() {
+        board = new Board();
+    }
+
     public void playGame(int nbPlayer)
     {
-        board = new Board();
-
         for (int i = 0; i < nbPlayer; i++)
         {
             players.add(new Player("player" + (i + 1), this));
