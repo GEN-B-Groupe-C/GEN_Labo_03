@@ -16,11 +16,4 @@ class BoardTest {
              assertNotNull(s.name);
         }
     }
-
-    @ParameterizedTest
-    @ValueSource(ints = {17, 18, 19, 24})
-    void getSquareTest(int value)
-    {
-        assertEquals(board.getSquares()[value] ,board.getSquare(board.getSquares()[value-2],2));
-    }
 }
