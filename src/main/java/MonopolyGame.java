@@ -6,12 +6,16 @@ public class MonopolyGame {
     private int roundCnt;
 
     private Vector<Player> players = new Vector<Player>();
+    Die[] dies = {new Die(), new Die()};
+    Board board;
 
     public void playGame(int nbPlayer)
     {
+        board = new Board();
+
         for (int i = 0; i < nbPlayer; i++)
         {
-            players.add(new Player("player" + (i + 1)));
+            players.add(new Player("player" + (i + 1), this));
         }
 
         while (roundCnt < NB_ROUND) {
