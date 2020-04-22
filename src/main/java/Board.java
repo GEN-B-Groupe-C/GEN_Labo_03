@@ -14,7 +14,7 @@ public class Board {
         return squares[(oldLoc.getId() + fvTotal) % BOARD_SIZE];
     }
 
-    public Square getFirstSquare() {
-        return squares[0];
+    public Square[] getSquares() {
+        return squares;
     }
 }

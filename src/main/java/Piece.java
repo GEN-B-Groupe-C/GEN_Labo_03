@@ -5,7 +5,7 @@ public class Piece {
 
     Piece (String name, MonopolyGame game) {
         this.name = name;
-        isOn = game.board.getFirstSquare();
+        isOn = game.board.getSquares()[0];
     }
 
     public Square getLocation() {
