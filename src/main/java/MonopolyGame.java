@@ -6,7 +6,6 @@ public class MonopolyGame {
     private int roundCnt;
 
     private Vector<Player> players = new Vector<Player>();
-    Die[] dies = {new Die(), new Die()};
     Board board;
 
     MonopolyGame() {
