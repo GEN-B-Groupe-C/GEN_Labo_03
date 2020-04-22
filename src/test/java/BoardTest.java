@@ -14,13 +14,6 @@ class BoardTest {
         board = new Board();
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {17, 18, 19, 24})
-    void getSquareTest(int value)
-    {
-        assertEquals(board.getSquares()[value] ,board.getSquare(board.getSquares()[value-2],2));
-    }
-
     @Test
     void squaresHasName()
     {
