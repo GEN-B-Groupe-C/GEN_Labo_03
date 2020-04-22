@@ -1,15 +1,17 @@
 public class Player {
 
-    private final int NB_ROLL = 2;
+    private final int NB_ROLL = 2, BEGIN_CASH = 1500;
     private String name;
     MonopolyGame game;
     Piece piece;
+    private int cash;
 
     Player(String name, MonopolyGame game)
     {
         this.name = name;
         this.game = game;
         piece = new Piece("piece " + "name", game);
+        cash = BEGIN_CASH;
     }
 
     public void takeTurn()
@@ -27,5 +29,19 @@ public class Player {
         Square newLoc = game.board.getSquare(oldLoc, fvTot);
         piece.setLocation(newLoc);
         System.out.println(name + " s'est déplacé sur " + newLoc);
+
+        newLoc.landedOn(this);
+    }
+
+    public void addCash(int number) {
+        cash += number;
+    }
+
+    public int getNetWorth() {
+        return cash;
+    }
+
+    public void reduceCash(int number) {
+        cash -= number;
     }
 }

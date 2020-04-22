@@ -18,6 +18,6 @@ class DieTest {
     {
         System.out.println("Face : " + die.getFaceValue());
         assertTrue(DIE_HIGH >= die.getFaceValue());
-        assertTrue(DIE_LOW <= die.getFaceValue());
+        assertFalse(DIE_LOW > die.getFaceValue());
     }
 }
