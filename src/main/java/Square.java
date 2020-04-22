@@ -1,22 +1,14 @@
-public class Square {
-    private String name;
+public abstract class Square {
+    String name;
     private static int count = 0;
 
     public int getId() {
         return id;
     }
 
-    private int id = count++;
+    int id = count++;
 
-    Square()
-    {
-        if (id == 0)
-        {
-            name = "Go";
-        } else {
-            name = "Square " + id;
-        }
-    }
+    public void landedOn(Player p) {}
 
     @Override
     public String toString() {

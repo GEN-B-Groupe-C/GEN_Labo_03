@@ -6,7 +6,16 @@ public class Board {
     Board() {
         for (int i = 0; i < BOARD_SIZE; i++)
         {
-            squares[i] = new Square();
+            if (i == 0)
+            {
+                squares[i] = new GoSquare();
+            } else if (i == 10) {
+                squares[i] = new GoToJailSquare();
+            } else if (i == 20) {
+                squares[i] = new IncomeTaxSquare();
+            } else {
+                squares[i] = new RegularSquare();
+            }
         }
     }
 

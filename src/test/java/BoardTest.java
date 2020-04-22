@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -13,10 +14,12 @@ class BoardTest {
         board = new Board();
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {10, 12, 14, 24})
-    void getSquareTest(int value)
+    @Test
+    void squaresHasName()
     {
-        assertEquals(board.getSquares()[value] ,board.getSquare(board.getSquares()[value-2],2));
+        for (Square s : board.getSquares())
+        {
+             assertNotNull(s.name);
+        }
     }
 }
